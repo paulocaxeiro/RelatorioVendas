@@ -38,4 +38,4 @@ Após configuradas as bases, abrir o projeto RelatorioVendas.dproj, e compilar n
 
 - Em relação aos critérios de comissão, optei pelo simplificado, de 10%, pois considero mais tranquilo de ser implentado, considerando as restrições. Se necessário, posso enviar uma outra versão com os critérios conforme o vendedor que vendeu mais em um determinado período.
 
-- O arquivo script em anexo já possui todos os scripts de criação das tabelas e database, e para popular as tabelas.
+- O arquivo script.sql em anexo já possui todos os scripts de criação das tabelas e database, e também para popular as tabelas.
