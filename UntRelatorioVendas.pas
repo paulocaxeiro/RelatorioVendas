@@ -257,10 +257,10 @@ function TFrmRelatorioVendas.MontaSQL: string;
 begin
   Result :=
    '   select tmpv.nom_vended,            ' + #13 +
-   '          format(dat_venda, ''dd/MM/yyyy'') as dat_venda,     ' + #13 +
+   '          format(dat_venda, ''dd/mm/yyyy'') as dat_venda,     ' + #13 +
    '          isnull(round(val_venda,2), 0) as val_venda,    ' + #13 +
-   '          isnull(VAL_DESCON,0) as val_descon,  ' + #13 +
-   '          isnull(VAL_TOTAL,0) as val_total,    ' + #13 +
+   '          isnull(val_descon,0) as val_descon,  ' + #13 +
+   '          isnull(val_total,0) as val_total,    ' + #13 +
    '          isnull(vsom.val_soma_vendas_vended,0) as val_soma_vendas_vended,          ' + #13 +
    '          round(isnull(vsom.val_soma_vendas_vended,0)*0.10,2) as valor_comissao '  + #13 +
    '       from tab_vendedores tmpv            ' + #13 +
@@ -272,20 +272,20 @@ begin
    '                 val_descon,                ' + #13 +
    '                 dat_venda,                 ' + #13 +
    '                 cod_venda                  ' + #13 +
-   '            from TAB_VENDEDORES vdd          ' + #13 +
-   '           join tab_vendas ven on ven.COD_VENDED = vdd.COD_VENDED    ' + #13 +
+   '            from tab_vendedores vdd          ' + #13 +
+   '           join tab_vendas ven on ven.cod_vended = vdd.cod_vended    ' + #13 +
 
    //aqui,como logo abaixo, o correto seria passar os parâmetros de data utilizando o params da query (aparambyname,
    //estou fazendo dessa forma porque não consegui descobrir o porque, utilizei parambyname e
    //ele não funcionou e também não deu erro, só funcionou dessa forma.
 
 
-   '           WHERE DAT_VENDA >= ''' + edtDat_vendainicial.Text + ''''    + #13 +
-   '             AND DAT_VENDA <= ''' + edtDat_vendafinal.text + '''';
+   '           WHERE dat_venda >= ''' + edtDat_vendainicial.Text + ''''    + #13 +
+   '             AND dat_venda <= ''' + edtDat_vendafinal.text + '''';
    if RdgOpcao.ItemIndex = 1 then
-     Result := Result + ' AND ven.COD_VENDED = ' + VartoStr(DblVendedores.KeyValue);
+     Result := Result + ' and ven.cod_vended = ' + VartoStr(DblVendedores.KeyValue);
 
-   Result := Result +  ' ) tmp on tmp.cod_vended = tmpv.COD_VENDED ' ;
+   Result := Result +  ' ) tmp on tmp.cod_vended = tmpv.cod_vended ' ;
 
    IF CKBExibirsemvendas.Checked then
      Result := REsult + ' left join      '
@@ -298,20 +298,20 @@ begin
    Result := Result +
              '(select cod_vended, isnull(sum(val_total),0) as val_soma_vendas_vended      ' + #13 +
              '  from tab_vendas vrns2                             ' + #13 +
-             '           WHERE DAT_VENDA >= ''' + edtDat_vendainicial.Text + ''''    + #13 +
-             '             AND DAT_VENDA <= ''' + edtDat_vendafinal.text + '''';
+             '           WHERE dat_venda >= ''' + edtDat_vendainicial.Text + ''''    + #13 +
+             '             AND dat_venda <= ''' + edtDat_vendafinal.text + '''';
 
    //se optar por mostrar um vendedor em específico, passa o parâmetro escolhido no dblookupcombobox
    if RdgOpcao.ItemIndex = 1 then
-     Result := Result + ' AND vrns2.COD_VENDED = ' + VartoStr(DblVendedores.KeyValue);
+     Result := Result + ' AND vrns2.cod_vended = ' + VartoStr(DblVendedores.KeyValue);
 
    Result := Result +
      '    group by cod_vended)  vsom                  ' + #13 +
-     '    on vsom.cod_vended = tmp.COD_VENDED     ' + #13 +
+     '    on vsom.cod_vended = tmp.cod_vended     ' + #13 +
      'group by  tmpv.cod_vended,                  ' + #13 +
      '          tmpv.nom_vended,                  ' + #13 +
-     '          tmp.DAT_VENDA,                    ' + #13 +
-     '          tmp.VAL_VENDA,                    ' + #13 +
+     '          tmp.dat_venda,                    ' + #13 +
+     '          tmp.val_venda,                    ' + #13 +
      '          val_descon,                       ' + #13 +
      '          val_total,                         ' + #13 +
      '          vsom.val_soma_vendas_vended  ';
