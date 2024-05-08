@@ -30,7 +30,7 @@ Em anexo estão também as imagens das configurações desses pontos.
 
 ## Rodando
 
-Após configuradas as bases, abrir o projeto RelatorioVendas.dproj, e compilar normalmente no Delphi. 
+Após configuradas as bases, abrir o projeto RelatorioVendas.dproj, e compilar normalmente no Delphi. Para gerar o relatório, preencher os filtros e clicar em 'Gerar csv'. O programa gerará um arquivo chamado Relatorio.csv, no mesmo local onde está o executável.
 
 ## Observações
 
