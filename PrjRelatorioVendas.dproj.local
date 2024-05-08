@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2024/05/07 13:35:02.000.227,=C:\Users\paulo\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2024/05/07 13:35:21.000.567,=C:\Users\paulo\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2024/05/07 13:35:33.000.835,=C:\Users\paulo\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2024/05/07 13:37:52.000.979,=C:\Users\paulo\OneDrive\Documentos\Embarcadero\Studio\Projects\UntRelatorioVendas.pas</Transaction>
+    <Transaction>2024/05/07 14:59:50.000.524,=C:\Users\paulo\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2024/05/07 15:21:21.000.961,C:\Users\paulo\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit2.pas=C:\Users\paulo\OneDrive\Documentos\Embarcadero\Studio\Projects\UDMRelatorioVendas.pas</Transaction>
+    <Transaction>2024/05/07 15:21:21.000.961,C:\Users\paulo\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit2.dfm=C:\Users\paulo\OneDrive\Documentos\Embarcadero\Studio\Projects\UDMRelatorioVendas.dfm</Transaction>
+    <Transaction>2024/05/07 15:21:31.000.026,C:\Users\paulo\OneDrive\Documentos\Embarcadero\Studio\Projects\Project1.dproj=C:\Users\paulo\OneDrive\Documentos\Embarcadero\Studio\Projects\PrjRelatorioVendas.dproj</Transaction>
+  </Transactions>
+</BorlandProject>
